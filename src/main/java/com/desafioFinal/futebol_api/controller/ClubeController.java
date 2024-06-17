@@ -2,10 +2,11 @@ package com.desafioFinal.futebol_api.controller;
 
 import com.desafioFinal.futebol_api.models.Clube;
 import com.desafioFinal.futebol_api.services.ClubeService;
-import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/clubes")

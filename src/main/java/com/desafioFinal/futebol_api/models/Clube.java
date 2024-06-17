@@ -1,12 +1,8 @@
 package com.desafioFinal.futebol_api.models;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.PastOrPresent;
-import jakarta.validation.constraints.Size;
-import org.antlr.v4.runtime.misc.NotNull;
 
 import java.time.LocalDate;
 
@@ -15,20 +11,55 @@ public class Clube {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @NotNull
-    @Size(min = 2)
     private String nome;
-
-    @NotNull
-    @Size(min = 2, max = 2)
     private String siglaEstado;
-
-    @NotNull
-    @PastOrPresent
     private LocalDate dataCriacao;
-
     private boolean ativo;
 
-    // Getters e Setters
+    // Construtores, getters e setters
+
+    public Clube() {}
+
+    public Clube(String nome, String siglaEstado, LocalDate dataCriacao, boolean ativo) {
+        this.nome = nome;
+        this.siglaEstado = siglaEstado;
+        this.dataCriacao = dataCriacao;
+        this.ativo = ativo;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSiglaEstado() {
+        return siglaEstado;
+    }
+
+    public void setSiglaEstado(String siglaEstado) {
+        this.siglaEstado = siglaEstado;
+    }
+
+    public LocalDate getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(LocalDate dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
 }

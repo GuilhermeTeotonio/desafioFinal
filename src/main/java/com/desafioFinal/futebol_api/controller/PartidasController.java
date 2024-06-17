@@ -1,42 +1,43 @@
 package com.desafioFinal.futebol_api.controller;
 import com.desafioFinal.futebol_api.models.Partidas;
 import com.desafioFinal.futebol_api.services.PartidasService;
-import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/partidas")
-public class PartidaController {
+public class PartidasController {
     @Autowired
-    private PartidasService partidaService;
+    private PartidasService partidasService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Partidas salvarPartida(@RequestBody Partidas partida) {
-        return partidaService.salvarPartida(partida);
+    public Partidas salvarPartida(@RequestBody Partidas partidas) {
+        return partidasService.salvarPartidas(partidas);
     }
 
     @PutMapping("/{id}")
     public Partidas editarPartida(@PathVariable Long id, @RequestBody Partidas partidas) {
-        return partidaService.editarPartida(id, partidas);
+        return partidasService.editarPartidas(id, partidas);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void removerPartida(@PathVariable Long id) {
-        partidaService.removerPartida(id);
+    public void removerPartidas(@PathVariable Long id) {
+        partidasService.removerPartidas(id);
     }
 
     @GetMapping("/{id}")
-    public Partidas buscarPartida(@PathVariable Long id) {
-        return partidaService.buscarPartida(id);
+    public Partidas buscarPartidas(@PathVariable Long id) {
+        return partidasService.buscarPartidas(id);
     }
 
     @GetMapping
     public List<Partidas> listarPartidas() {
-        return partidaService.listarPartidas();
+        return partidasService.listarPartidas();
     }
 }

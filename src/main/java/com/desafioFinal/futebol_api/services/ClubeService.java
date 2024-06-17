@@ -2,11 +2,12 @@ package com.desafioFinal.futebol_api.services;
 
 import com.desafioFinal.futebol_api.models.Clube;
 import com.desafioFinal.futebol_api.repository.ClubeRepository;
-import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
 
 @Service
 public class ClubeService {
