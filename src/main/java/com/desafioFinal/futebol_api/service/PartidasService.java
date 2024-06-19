@@ -1,5 +1,5 @@
-package com.desafioFinal.futebol_api.services;
-import com.desafioFinal.futebol_api.models.Partidas;
+package com.desafioFinal.futebol_api.service;
+import com.desafioFinal.futebol_api.model.Partidas;
 import com.desafioFinal.futebol_api.repository.ClubeRepository;
 import com.desafioFinal.futebol_api.repository.EstadioRepository;
 import com.desafioFinal.futebol_api.repository.PartidasRepository;

@@ -1,8 +1,10 @@
-package com.desafioFinal.futebol_api.models;
+package com.desafioFinal.futebol_api.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
@@ -11,12 +13,20 @@ public class Clube {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotNull
+    @Size(min = 2, max = 50, message = "O nome do clube deve ter entre 2 e 50 caracteres")
     private String nome;
+
+    @NotNull
     private String siglaEstado;
+
+    @NotNull
     private LocalDate dataCriacao;
+
+    @NotNull
     private boolean ativo;
 
-    // Construtores, getters e setters
 
     public Clube() {}
 

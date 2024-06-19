@@ -1,4 +1,4 @@
-package com.desafioFinal.futebol_api.models;
+package com.desafioFinal.futebol_api.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

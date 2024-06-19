@@ -1,6 +1,6 @@
-package com.desafioFinal.futebol_api.services;
+package com.desafioFinal.futebol_api.service;
 
-import com.desafioFinal.futebol_api.models.Clube;
+import com.desafioFinal.futebol_api.model.Clube;
 import com.desafioFinal.futebol_api.repository.ClubeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

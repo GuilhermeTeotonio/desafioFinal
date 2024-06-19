@@ -1,6 +1,6 @@
 package com.desafioFinal.futebol_api.controller;
-import com.desafioFinal.futebol_api.models.Partidas;
-import com.desafioFinal.futebol_api.services.PartidasService;
+import com.desafioFinal.futebol_api.model.Partidas;
+import com.desafioFinal.futebol_api.service.PartidasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
