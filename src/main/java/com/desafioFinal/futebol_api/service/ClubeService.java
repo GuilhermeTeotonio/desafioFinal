@@ -37,6 +37,10 @@ public class ClubeService {
         return clubeRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Clube não encontrado"));
     }
 
+    public boolean existeClubeComMesmoNomeEEstado(String nome, String siglaEstado) {
+        return clubeRepository.existsByNomeAndSiglaEstado(nome, siglaEstado);
+    }
+
     public List<Clube> listarClubes() {
         return clubeRepository.findAll();
     }

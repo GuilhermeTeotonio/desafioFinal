@@ -21,9 +21,11 @@ public class ClubeController {
     @PostMapping
     public ResponseEntity<?> cadastrarClube(@Valid @RequestBody Clube clube, BindingResult result) {
         if (result.hasErrors()) {
-            return ResponseEntity.badRequest().body("Dados inválidos: " + result.getFieldError().getDefaultMessage());
+            return ResponseEntity.badRequest().body("Inválidos: " + result.getFieldError().getDefaultMessage());
         }
-
+        if (clubeService.existeClubeComMesmoNomeEEstado(clube.getNome(), clube.getSiglaEstado())) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Time já cadastrado");
+        }
         try {
             Clube clubeSalvo = clubeService.salvarClube(clube);
             return ResponseEntity.status(HttpStatus.CREATED).body(clubeSalvo);
