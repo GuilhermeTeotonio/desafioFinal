@@ -28,6 +28,4 @@ public class Partidas {
 
     private int golsCasa;
     private int golsVisitante;
-
-    // Getters e Setters
 }

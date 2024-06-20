@@ -24,14 +24,15 @@ public class EstadioController {
     public Estadio editarEstadio(@PathVariable Long id, @RequestBody Estadio estadio) {
         return estadioService.editarEstadio(id, estadio);
     }
+    @GetMapping
+    public List<Estadio> listarEstadios() {
+        return estadioService.listarEstadios();
+    }
 
     @GetMapping("/{id}")
     public Estadio buscarEstadio(@PathVariable Long id) {
         return estadioService.buscarEstadio(id);
     }
 
-    @GetMapping
-    public List<Estadio> listarEstadios() {
-        return estadioService.listarEstadios();
-    }
+
 }

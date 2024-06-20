@@ -15,9 +15,9 @@ public class Clube {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Nome do clube não pode estar em branco")
+    @NotBlank(message = "Não deixar o nome do time em branco")
     @NotNull
-    @Size(min = 2, max = 50, message = "O nome do clube deve ter entre 2 e 50 caracteres")
+    @Size(min = 2, max = 50, message = "O nome do clube deve ter mais de 2 caracteres e menos que 50 caracteres")
     private String nome;
 
     @NotNull

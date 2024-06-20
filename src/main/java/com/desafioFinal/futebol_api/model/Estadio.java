@@ -11,9 +11,6 @@ public class Estadio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-
-    // Construtores, getters e setters
-
     public Estadio() {}
 
     public Estadio(String nome) {
